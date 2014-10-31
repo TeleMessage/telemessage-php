@@ -1,23 +1,23 @@
 <?php
-    // includes TeleMessage.
-    require_once ("../../com/TeleMessage.class.php");
     // initializing data and autoloading required files
     $tm = TeleMessage::get();
 
     $auth = new AuthenticationDetails();
-    $auth->setUsername("grinfeld");
-    $auth->setPassword("1946");
+    $auth->setUsername("john_donne");
+    $auth->setPassword("12345678");
 
     $recp = new Recipient();
-    $recp->setType("SMS");
-    $recp->setValue("+972548027010");
+    $recp->setType("EMAIL");
+    $recp->setValue("someemail@somedomain.com");
 
     $m = new Message();
     $m->addRecipient($recp);
     $fm = new FileMessage();
     $fm->setFilename("file.png");
     $fm->setMimetype("image/png");
-    $fm->setValue(base64_encode(file_get_contents("file.png")));
+    $imgPath = pathinfo(__FILE__, PATHINFO_DIRNAME) . "/file.png";
+    $fm->setValue(base64_encode(file_get_contents($imgPath)));
+
     $m->addFilemessage($fm);
 
     $data = $tm->generateSend($auth, $m);

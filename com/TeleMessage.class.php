@@ -30,8 +30,8 @@ class TeleMessage {
         "Schedule"
     );
 
-    const STATUS_URL = "http://www.telemessage.com/rest/message/status/";
-    const SEND_URL = "http://www.telemessage.com/rest/message/send/";
+    const STATUS_URL = "https://rest.telemessage.com/rest/message/status/";
+    const SEND_URL = "https://rest.telemessage.com/rest/message/send/";
 
     private static $tm = null;
 

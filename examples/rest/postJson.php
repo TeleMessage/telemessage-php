@@ -1,16 +1,14 @@
 <?php
-    // includes TeleMessage.
-    require_once ("../../com/TeleMessage.class.php");
     // initializing data and autoloading required files
     $tm = TeleMessage::get();
 
     $auth = new AuthenticationDetails();
-    $auth->setUsername("grinfeld");
-    $auth->setPassword("1946");
+    $auth->setUsername("john_donne");
+    $auth->setPassword("12345678");
 
     $recp = new Recipient();
     $recp->setType("SMS");
-    $recp->setValue("+972544403945");
+    $recp->setValue("+1xxxxxxxx");
 
     $m = new Message();
     $m->addRecipient($recp);
