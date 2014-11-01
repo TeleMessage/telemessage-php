@@ -43,9 +43,11 @@ class StatusMessageResponse extends MessageResponse {
     function fromJson($data) {
         parent::fromJson($data);
         $this->recipientStatus = array();
-        if (isset($data["recipientStatus"]) && is_array($data["recipientStatus"])) {
-            while(list($key, $recp) = each($data["recipientStatus"])) {
-                array_push($this->recipientStatus, $recp);
+        if (isset($data["recipients"]) && is_array($data["recipients"])) {
+            while(list($key, $rst) = each($data["recipients"])) {
+                $status = new RecipientStatus();
+                $status->fromJson($rst);
+                array_push($this->recipientStatus, $status);
             }
         }
     }

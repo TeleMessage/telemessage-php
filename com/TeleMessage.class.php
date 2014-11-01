@@ -11,6 +11,7 @@
 class TeleMessage {
 
     const SUCCESS_SEND = 100;
+    const SUCCESS_REQUEST = 0;
 
     CONST TM_NAMESPACE = "telemessage.web.services.";
     CONST ESCAPE_JSON = "\"\\";
@@ -127,11 +128,11 @@ class TeleMessage {
      * Querying TeleMessage REST API for status
      * @param AuthenticationDetails $auth
      * @param integer $messageID message id to check status
-     * @param string $messageKey message keyto check status
+     * @param string $messageKey message key to check status
      * @return string
      */
-    function queryStatus(AuthenticationDetails $auth, $messageID, $messageKey) {
-        $sendStr = "[" . $auth->toJson() . ", " . $messageID . ", \"" . addcslashes($messageKey, TeleMessage::ESCAPE_JSON) . "\"]";
+    function generateQueryStatus(AuthenticationDetails $auth, $messageID, $messageKey) {
+        return "[" . $auth->toJson() . ", " . $messageID . ", \"" . addcslashes($messageKey, TeleMessage::ESCAPE_JSON) . "\"]";
     }
 
     /**
