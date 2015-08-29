@@ -2,7 +2,7 @@
   "name": "telemessage/web",
   "type": "library",
   "description" : "TeleMessage PHP library for sending messages via TeleMessage",
-  "keywords": ["TeleMessage", "Send", "SMS", "Voice", "IP", "FAX"],
+  "keywords": ["TeleMessage", "Send", "SMS", "Voice", "IP", "FAX", "text message", "send", "MMS"],
   "license": "MIT",
   "homepage": "http://developer.telemessage.com/",
   "authors": [
