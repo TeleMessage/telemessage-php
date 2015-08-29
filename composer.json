@@ -1,0 +1,32 @@
+{
+  "name": "telemessage/web",
+  "type": "library",
+  "description" : "TeleMessage PHP library for sending messages via TeleMessage",
+  "keywords": ["TeleMessage", "Send", "SMS", "Voice", "IP", "FAX"],
+  "license": "MIT",
+  "homepage": "http://developer.telemessage.com/",
+  "authors": [
+    {
+      "name" : "TeleMessage",
+      "email" : "support@telemessage.com",
+      "homepage" : "http://developer.telemessage.com/api-libraries/php/",
+      "role" : "Developer"
+    }
+  ],
+  "require": {
+    "php" : ">=5.5.4"
+  },
+  "require": {
+    "grinfeld/phpjsonable": "~1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "telemessage\\web\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "telemessage\\web\\Test\\": "test"
+    }
+  }
+}
