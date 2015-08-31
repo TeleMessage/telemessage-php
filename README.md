@@ -3,7 +3,9 @@ telemessage-php
 
 A PHP library for communicating with the TeleMessage REST API for sending and querying status for sent messages
 
-# Sending Message
+# Using composer
+
+## Sending Message
 
 First we need to import telemessage classes:
 
@@ -81,7 +83,7 @@ We received response from TeleMessage and executed `TeleMessage::decode(new Stri
  
 That’s it – message is sent!
 
-# Sending Messages with Attachments
+## Sending Messages with Attachments
 
 Sending message with attachments is very similar to sending a simple message. The only thing you need to do is add your file by using the addFileMessage method:
 
@@ -97,7 +99,7 @@ _Note:_
 1. Some file types won’t be supported by your destination, e.g. if you are sending tiff file to SMS, the attachment won’t be added, however the same file will be delivered to a fax recipient.
 2. You must encode your attachment file into Base64. Find more [here](https://www.google.com/?#q=base64+encode+online).
     
-# Query Status
+## Query Status
 
 Great! Message is sent, but status you've just received, saying that message "Not delivered yet". 
 Sending message could take few seconds, so we added `queryStatus` in our REST API and you can use it with our PHP API Library. See how:
@@ -159,9 +161,19 @@ Now, we need to parse response and print it out:
     
 We received response from TeleMessage and executed `TeleMessage::decode(new StringInputStream($postResult))` to receive `MessageStatusResponse`.   
  
+# Include TeleMessage PHP library without using composer
+
+Using PHP library without composer is almost the same as with composer.
+First download project release from Github, extract and find telemessage_web.phar
+
+The main difference is: at the beginning of your script instead of `require "vendor/autoload.php"` used by *composer* write following lines:
+
+    require "telemessage_web.phar";
+    TMLoader::get();
+
+After those lines use same code as in composer example 
 
 That’s it. We hope it was helpful and now you can use TeleMessage services more easily.
 
-
 _Note:_
- * Older version without composer you can find [here](https://github.com/TeleMessage/telemessage-php/tree/telemessage-php1)
+* Older version without composer you can find [here](https://github.com/TeleMessage/telemessage-php/tree/telemessage-php1)

@@ -14,9 +14,7 @@
     }
   ],
   "require": {
-    "php" : ">=5.5.4"
-  },
-  "require": {
+    "php" : ">=5.5.4",
     "grinfeld/phpjsonable": "~1.0"
   },
   "autoload": {
