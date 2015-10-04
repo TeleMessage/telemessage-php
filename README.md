@@ -165,12 +165,10 @@ We received response from TeleMessage and executed `TeleMessage::decode(new Stri
 
 Using PHP library without composer is almost the same as with composer.
 First download project release from Github, extract and find telemessage_web.phar
-Since, we have dependancy on [grinfeld/phpjsonable](https://github.com/grinfeld/phpjsonable), we need to download its phar file, too: https://github.com/grinfeld/phpjsonable/releases
 
 The main difference is: at the beginning of your script instead of `require "vendor/autoload.php"` used by *composer* write following lines:
 
     require "telemessage_web.phar";
-    require "grinfeld_phpjsonable.phar";
     TMLoader::get();
 
 After those lines use same code as in composer example 
