@@ -33,7 +33,7 @@ if (isset($composer["require"])) {
                 if ($file->isFile() && $file->getFilename() != ".." && $file->getFilename() != ".") {
                     $pathBefore = substr($file->getPath(), 0, strlen($dir));
                     $pathAfter = substr($file->getPath(), strlen($dir) + 1);
-                    $pathTo = "\\" . $library . ($pathAfter !== false ? ($pathAfter . "\\") : "") . $file->getFilename();
+                    $pathTo = "\\" . $library . "\\" . ($pathAfter !== false ? ($pathAfter . "\\") : "") . $file->getFilename();
                     $phar->addFromString($pathTo, file_get_contents($file->getPath() . "/" . $file->getFilename()));
                 }
             }
