@@ -23,7 +23,7 @@ Than we need to create object with **TeleMessage** account credentials:
     $auth->setUsername("john_donne");
     $auth->setPassword("12345678");
     
-Let’s fill in the message data.
+Letâ€™s fill in the message data.
 
 Now, we set text and subject:
 
@@ -81,7 +81,7 @@ Now `$postResult` contains response received **from TeleMessage**. The last smal
     
 We received response from TeleMessage and executed `TeleMessage::decode(new StringInputStream($postResult))` to receive `MessageResponse`.
  
-That’s it – message is sent!
+Thatâ€™s it â€“ message is sent!
 
 ## Sending Messages with Attachments
 
@@ -96,7 +96,7 @@ Sending message with attachments is very similar to sending a simple message. Th
     $m->addFilemessage($fm);
     
 _Note:_
-1. Some file types won’t be supported by your destination, e.g. if you are sending tiff file to SMS, the attachment won’t be added, however the same file will be delivered to a fax recipient.
+1. Some file types wonâ€™t be supported by your destination, e.g. if you are sending tiff file to SMS, the attachment wonâ€™t be added, however the same file will be delivered to a fax recipient.
 2. You must encode your attachment file into Base64. Find more [here](https://www.google.com/?#q=base64+encode+online).
     
 ## Query Status
@@ -165,15 +165,17 @@ We received response from TeleMessage and executed `TeleMessage::decode(new Stri
 
 Using PHP library without composer is almost the same as with composer.
 First download project release from Github, extract and find telemessage_web.phar
+Since, we have dependancy on [grinfeld/phpjsonable](https://github.com/grinfeld/phpjsonable), we need to download its phar file, too: https://github.com/grinfeld/phpjsonable/releases
 
 The main difference is: at the beginning of your script instead of `require "vendor/autoload.php"` used by *composer* write following lines:
 
     require "telemessage_web.phar";
+    require "grinfeld_phpjsonable.phar";
     TMLoader::get();
 
 After those lines use same code as in composer example 
 
-That’s it. We hope it was helpful and now you can use TeleMessage services more easily.
+Thatâ€™s it. We hope it was helpful and now you can use TeleMessage services more easily.
 
 _Note:_
 * Older version without composer you can find [here](https://github.com/TeleMessage/telemessage-php/tree/telemessage-php1)
